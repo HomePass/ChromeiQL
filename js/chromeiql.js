@@ -56,7 +56,7 @@ function updateURL() {
 // Defines a GraphQL fetcher using the fetch API.
 function graphQLFetcher(endpoint) {
   var headers = { 'Content-Type': 'application/json' };
-  if(localStorage.getValue('userToken')) {
+  if(localStorage.getItem('userToken')) {
     headers.Authorization = 'Bearer ' + localStorage.getValue('userToken');
   }
   return function(graphQLParams) {
