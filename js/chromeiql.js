@@ -57,7 +57,7 @@ function updateURL() {
 function graphQLFetcher(endpoint) {
   var headers = { 'Content-Type': 'application/json' };
   if(localStorage.getItem('userToken')) {
-    headers.Authorization = 'Bearer ' + localStorage.getItem('userToken');
+    headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('userToken')};
   }
   return function(graphQLParams) {
     return fetch(endpoint, {
